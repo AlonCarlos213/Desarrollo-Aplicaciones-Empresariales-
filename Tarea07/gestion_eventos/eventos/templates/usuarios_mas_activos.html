@@ -1,0 +1,13 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+    <h1>Usuarios más activos</h1>
+    <ul>
+        {% for usuario in usuarios_activos %}
+            <li>{{ usuario.username }} - Registrado en {{ usuario.eventos_count }} eventos</li>
+        {% empty %}
+            <li>No hay usuarios registrados en eventos.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'listar_eventos' %}">Volver a la lista de eventos</a>
+{% endblock %}

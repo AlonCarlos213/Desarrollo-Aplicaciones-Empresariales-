@@ -1,0 +1,13 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+    <h1>Eventos organizados por {{ usuario.username }}</h1>
+    <ul>
+        {% for evento in eventos %}
+            <li>{{ evento.nombre }} - {{ evento.fecha_inicio }} al {{ evento.fecha_fin }}</li>
+        {% empty %}
+            <li>No hay eventos organizados por este usuario.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'listar_eventos' %}">Volver a la lista de eventos</a>
+{% endblock %}

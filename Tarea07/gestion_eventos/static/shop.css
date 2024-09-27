@@ -1,0 +1,168 @@
+/* Estilos para el navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.navbar-left a, .navbar-right a, .navbar-right button {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-right a {
+    margin-bottom: 10px;
+}
+
+/* Ajuste de botones para el logout */
+.navbar-right form button {
+    margin-top: 10px;
+}
+
+/* Efectos de hover */
+.navbar-left a:hover, .navbar-right a:hover, .navbar-right button:hover {
+    background-color: #45a049;
+    cursor: pointer;
+}
+
+/* Estilos generales */
+body {
+    background-color: #f4f4f4;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+}
+
+h1 {
+    color: #333;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: white;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+li:hover {
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+button, .btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, .btn:hover {
+    background-color: #45a049;
+}
+
+footer {
+    margin-top: 40px;
+    padding: 20px 0;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+/* Estilos para la página de detalles del evento */
+.event-details-container {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.event-details-container h1 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.event-details-container p {
+    font-size: 18px;
+    color: #666;
+    margin: 10px 0;
+}
+
+.event-details-container p strong {
+    color: #333;
+}
+
+.registered-msg {
+    color: green;
+    font-weight: bold;
+}
+
+.event-details-container .btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.event-details-container .btn:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para los formularios */
+form input, form textarea, form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form button {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar-left, .navbar-right {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .event-details-container {
+        margin: 10px;
+        padding: 15px;
+    }
+}

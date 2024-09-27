@@ -1,0 +1,49 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+    <h1>Lista de Eventos</h1>
+    <ul>
+        {% for evento in eventos %}
+            <li>
+                <a href="{% url 'detalle_evento' evento.id %}">{{ evento.nombre }}</a> - {{ evento.fecha_inicio }} al {{ evento.fecha_fin }} <br>
+                Organizado por: {{ evento.organizador.username }} <br>
+                <a href="{% url 'eliminar_evento' evento.id %}">Eliminar</a> |
+                <a href="{% url 'actualizar_evento' evento.id %}">Actualizar</a>
+            </li>
+        {% empty %}
+            <p>No hay eventos disponibles.</p>
+        {% endfor %}
+    </ul>
+    <br>
+    <a href="{% url 'crear_evento' %}">Crear un nuevo evento</a>
+    
+    <!-- Agregar sección de Consultas -->
+    <h2>Consultas</h2>
+    <ul>
+        <li><a href="{% url 'usuarios_mas_activos' %}">Ver usuarios más activos</a></li>
+        <li><a href="{% url 'eventos_organizados_por_usuario' request.user.id %}">Ver eventos organizados por mi </a></li>
+    </ul>
+    <!-- Opción de elegir mes y año con un formulario -->
+    <h3>Consultar eventos por mes y año</h3>
+    <form method="get" action="">
+        <label for="year">Año:</label>
+        <input type="number" id="year" name="year" value="2024" min="2000" max="2100" required>
+        
+        <label for="month">Mes:</label>
+        <select id="month" name="month" required>
+            <option value="1">Enero</option>
+            <option value="2">Febrero</option>
+            <option value="3">Marzo</option>
+            <option value="4">Abril</option>
+            <option value="5">Mayo</option>
+            <option value="6">Junio</option>
+            <option value="7">Julio</option>
+            <option value="8">Agosto</option>
+            <option value="9">Septiembre</option>
+            <option value="10">Octubre</option>
+            <option value="11">Noviembre</option>
+            <option value="12">Diciembre</option>
+        </select>
+        <button type="submit">Consultar</button>
+    </form>
+{% endblock %}

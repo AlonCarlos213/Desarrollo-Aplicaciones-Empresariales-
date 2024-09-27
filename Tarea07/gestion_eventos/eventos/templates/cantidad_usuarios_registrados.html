@@ -1,0 +1,9 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+    <h1>Cantidad de Usuarios Registrados</h1>
+    <p><strong>Evento:</strong> {{ evento.nombre }}</p>
+    <p><strong>Cantidad de usuarios registrados:</strong> {{ registros }}</p>
+    <br>
+    <a href="{% url 'listar_eventos' %}">Volver a la lista de eventos</a>
+{% endblock %}

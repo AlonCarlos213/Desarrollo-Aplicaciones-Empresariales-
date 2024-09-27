@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mi sitio de gestión de eventos{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'shop.css' %}">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-left">
+                <a class="btn" href="{% url 'listar_eventos' %}">Eventos</a>
+            </div>
+            <div class="navbar-right">
+                <a class="btn" href="{% url 'perfil_usuario' %}">Perfil</a><br>
+                <form action="{% url 'logout' %}" method="post" style="display:inline;">
+                    {% csrf_token %}
+                    <button class="btn" type="submit">Cerrar sesión</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mi sitio de gestión de eventos</p>
+    </footer>
+</body>
+</html>
